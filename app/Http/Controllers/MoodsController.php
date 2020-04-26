@@ -6,11 +6,12 @@ use GuzzleHttp\Client;
 
 class MoodsController extends Controller
 {
-    private $apiURI = config('moodtracker.url');
+    private $apiURI;
 
     public function __construct()
     {
         $this->client = new Client(['base_uri' => $this->apiURI]);
+		$this->apiURI = config('moodtracker.url');
     }
 
     public function index()
@@ -28,7 +29,7 @@ class MoodsController extends Controller
         return $this->client->request(
             'POST',
             'moods',
-            ['json' => request()->all()],
+            ['json' => request()->all()]
         );
     }
 
@@ -37,7 +38,7 @@ class MoodsController extends Controller
         return $this->client->request(
             'PUT',
             'moods/' . $moodId,
-            ['json' => request()->all()],
+            ['json' => request()->all()]
         );
     }
 
