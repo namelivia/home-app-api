@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
 use App\Models\Owner;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AddOwnerIdToExpensesTable extends Migration
 {
@@ -14,15 +14,15 @@ class AddOwnerIdToExpensesTable extends Migration
      */
     public function up()
     {
-			Schema::table('expenses', function (Blueprint $t) {
-				$t->integer('owner_id')
-					->unsigned()
-					->default(Owner::OWNER1)
-					->after('name');
-				$t->foreign('owner_id')
-					->references('id')
-					->on('owners');
-			});
+        Schema::table('expenses', function (Blueprint $t) {
+            $t->integer('owner_id')
+                    ->unsigned()
+                    ->default(Owner::OWNER1)
+                    ->after('name');
+            $t->foreign('owner_id')
+                    ->references('id')
+                    ->on('owners');
+        });
     }
 
     /**
@@ -32,9 +32,9 @@ class AddOwnerIdToExpensesTable extends Migration
      */
     public function down()
     {
-			Schema::table('expenses', function (Blueprint $t) {
-				$t->dropForeign('expenses_owner_id_foreign');
-				$t->dropColumn('owner_id');
-			});
+        Schema::table('expenses', function (Blueprint $t) {
+            $t->dropForeign('expenses_owner_id_foreign');
+            $t->dropColumn('owner_id');
+        });
     }
 }

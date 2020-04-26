@@ -1,9 +1,9 @@
 <?php
 
+use App\Models\Color;
 use App\Models\Garment;
 use App\Models\GarmentType;
 use App\Models\Place;
-use App\Models\Color;
 use App\Models\Status;
 use App\Models\User;
 
@@ -26,7 +26,7 @@ $factory->define(User::class, function (Faker\Generator $faker) {
     return [
         'username' => $faker->name,
         'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret')
+        'password' => $password ?: $password = bcrypt('secret'),
     ];
 });
 

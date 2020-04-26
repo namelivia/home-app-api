@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateExpensesTable extends Migration
 {
@@ -13,12 +13,12 @@ class CreateExpensesTable extends Migration
      */
     public function up()
     {
-			Schema::create('expenses', function (Blueprint $t) {
-				$t->increments('id');
-				$t->string('name');
-				$t->float('value', 8, 2);
-				$t->timestamps();
-			});
+        Schema::create('expenses', function (Blueprint $t) {
+            $t->increments('id');
+            $t->string('name');
+            $t->float('value', 8, 2);
+            $t->timestamps();
+        });
     }
 
     /**
@@ -28,6 +28,6 @@ class CreateExpensesTable extends Migration
      */
     public function down()
     {
-			Schema::dropIfExists('expenses');
+        Schema::dropIfExists('expenses');
     }
 }

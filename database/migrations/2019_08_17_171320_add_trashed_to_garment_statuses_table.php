@@ -1,10 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\Status;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\DB;
-use App\Models\Status;
 
 class AddTrashedToGarmentStatusesTable extends Migration
 {
@@ -15,13 +13,13 @@ class AddTrashedToGarmentStatusesTable extends Migration
      */
     public function up()
     {
-				DB::table('statuses')->insert([
-					[
-						'id' => Status::TRASHED,
-						'name' => 'Trashed',
-						'key' => 'trashed'
-					]
-				]);
+        DB::table('statuses')->insert([
+            [
+                'id' => Status::TRASHED,
+                'name' => 'Trashed',
+                'key' => 'trashed',
+            ],
+        ]);
     }
 
     /**
@@ -31,6 +29,6 @@ class AddTrashedToGarmentStatusesTable extends Migration
      */
     public function down()
     {
-			  DB::table('statuses')->where('id', Status::TRASHED)->delete();
+        DB::table('statuses')->where('id', Status::TRASHED)->delete();
     }
 }

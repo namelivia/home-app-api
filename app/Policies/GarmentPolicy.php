@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\Models\User;
 use App\Models\Garment;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class GarmentPolicy
@@ -15,6 +15,7 @@ class GarmentPolicy
      *
      * @param  \App\Models\User  $user
      * @param  \App\Models\Garment  $garment
+     *
      * @return mixed
      */
     public function view(User $user, Garment $garment)
@@ -26,6 +27,7 @@ class GarmentPolicy
      * Determine whether the user can create garments.
      *
      * @param  \App\Models\User  $user
+     *
      * @return mixed
      */
     public function create(User $user)
@@ -38,6 +40,7 @@ class GarmentPolicy
      *
      * @param  \App\Models\User  $user
      * @param  \App\Models\Garment  $garment
+     *
      * @return mixed
      */
     public function update(User $user, Garment $garment)
@@ -50,6 +53,7 @@ class GarmentPolicy
      *
      * @param  \App\Models\User  $user
      * @param  \App\Models\Garment  $garment
+     *
      * @return mixed
      */
     public function delete(User $user, Garment $garment)

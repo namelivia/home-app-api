@@ -2,19 +2,18 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Gate;
+use App\Models\Camera;
+use App\Models\Comment;
+use App\Models\Expense;
+use App\Models\Garment;
+use App\Models\Litem;
+use App\Policies\CameraPolicy;
+use App\Policies\CommentPolicy;
+use App\Policies\ExpensePolicy;
+use App\Policies\GarmentPolicy;
+use App\Policies\LitemPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Laravel\Passport\Passport;
-use App\Policies\GarmentPolicy;
-use App\Models\Garment;
-use App\Policies\LitemPolicy;
-use App\Models\Litem;
-use App\Policies\ExpensePolicy;
-use App\Models\Expense;
-use App\Models\Camera;
-use App\Policies\CameraPolicy;
-use App\Models\Comment;
-use App\Policies\CommentPolicy;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -39,6 +38,6 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-		Passport::routes();
+        Passport::routes();
     }
 }

@@ -1,9 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
 use Carbon\Carbon;
+use Illuminate\Database\Migrations\Migration;
 
 class CreatePassportClients extends Migration
 {
@@ -14,21 +12,21 @@ class CreatePassportClients extends Migration
      */
     public function up()
     {
-			DB::table('oauth_clients')->truncate();
-			DB::table('oauth_clients')->insert([
-			[
-				'id' => 1,
-				'user_id' => null,
-				'name' => 'Password Grant Client',
-				'secret' => 'amgFMuDwXW63hAFc82V8tXvAe5DYNmdpROH8nfNy',
-				'redirect' => 'http://localhost',
-				'personal_access_client' => '0',
-				'password_client' => '1',
-				'revoked' => '0',
-				'created_at' => Carbon::now(),
-				'updated_at' => Carbon::now()
-			]
-		  ]);
+        DB::table('oauth_clients')->truncate();
+        DB::table('oauth_clients')->insert([
+            [
+                'id' => 1,
+                'user_id' => null,
+                'name' => 'Password Grant Client',
+                'secret' => 'amgFMuDwXW63hAFc82V8tXvAe5DYNmdpROH8nfNy',
+                'redirect' => 'http://localhost',
+                'personal_access_client' => '0',
+                'password_client' => '1',
+                'revoked' => '0',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+        ]);
     }
 
     /**
@@ -38,6 +36,6 @@ class CreatePassportClients extends Migration
      */
     public function down()
     {
-			DB::table('oauth_clients')->truncate();
+        DB::table('oauth_clients')->truncate();
     }
 }

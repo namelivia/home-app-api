@@ -4,14 +4,14 @@ namespace App\Models;
 
 class Owner extends BaseModel
 {
-	const OWNER1 = 1;
-	const OWNER2 = 2;
+    const OWNER1 = 1;
+    const OWNER2 = 2;
 
-	/**
-	 * Whether or not this model is
-	 * read-only or can be modified.
-	 *
-	 * @var boolean
-	 */
-	public static $readOnly = true;
+    /**
+     * Whether or not this model is
+     * read-only or can be modified.
+     *
+     * @var bool
+     */
+    public static $readOnly = true;
 }

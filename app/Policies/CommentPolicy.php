@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\Models\User;
 use App\Models\Comment;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class CommentPolicy
@@ -15,6 +15,7 @@ class CommentPolicy
      *
      * @param  \App\Models\User  $user
      * @param  \App\Models\Comment  $comment
+     *
      * @return mixed
      */
     public function view(User $user, Comment $comment)
@@ -26,6 +27,7 @@ class CommentPolicy
      * Determine whether the user can create comments.
      *
      * @param  \App\Models\User  $user
+     *
      * @return mixed
      */
     public function create(User $user)
@@ -38,6 +40,7 @@ class CommentPolicy
      *
      * @param  \App\Models\User  $user
      * @param  \App\Models\Comment  $comment
+     *
      * @return mixed
      */
     public function update(User $user, Comment $comment)
@@ -50,6 +53,7 @@ class CommentPolicy
      *
      * @param  \App\Models\User  $user
      * @param  \App\Models\Comment  $comment
+     *
      * @return mixed
      */
     public function delete(User $user, Comment $comment)

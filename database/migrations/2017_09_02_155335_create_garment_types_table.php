@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Support\Facades\DB;
 use App\Models\GarmentType;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class CreateGarmentTypesTable extends Migration
 {
@@ -15,28 +15,28 @@ class CreateGarmentTypesTable extends Migration
      */
     public function up()
     {
-			Schema::create('garment_types', function (Blueprint $t) {
-				$t->increments('id');
-				$t->string('name');
-				$t->string('key');
-			});
-			DB::table('garment_types')->insert([
-				[
-					'id' => GarmentType::SHIRT,
-					'name' => 'Shirt',
-					'key' => 'shirt'
-				],
-				[
-					'id' => GarmentType::SHOE,
-					'name' => 'Shoe',
-					'key' => 'shoe'
-				],
-				[
-					'id' => GarmentType::PANTS,
-					'name' => 'Pants',
-					'key' => 'pants'
-				]
-			]);
+        Schema::create('garment_types', function (Blueprint $t) {
+            $t->increments('id');
+            $t->string('name');
+            $t->string('key');
+        });
+        DB::table('garment_types')->insert([
+            [
+                'id' => GarmentType::SHIRT,
+                'name' => 'Shirt',
+                'key' => 'shirt',
+            ],
+            [
+                'id' => GarmentType::SHOE,
+                'name' => 'Shoe',
+                'key' => 'shoe',
+            ],
+            [
+                'id' => GarmentType::PANTS,
+                'name' => 'Pants',
+                'key' => 'pants',
+            ],
+        ]);
     }
 
     /**
@@ -46,6 +46,6 @@ class CreateGarmentTypesTable extends Migration
      */
     public function down()
     {
-			Schema::dropIfExists('garment_types');
+        Schema::dropIfExists('garment_types');
     }
 }
