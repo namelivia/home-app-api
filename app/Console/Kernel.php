@@ -20,18 +20,19 @@ class Kernel extends ConsoleKernel
      * Define the application's command schedule.
      *
      * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+     *
      * @return void
      */
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')
         //     ->hourly();
-		
-		// Send a reminder to input data on the mood tracker
-		/*$schedule->command('home-app-api:send-mood-reminder')
-			->dailyAt('19:00');*/
-		/*$schedule->command('home-app-api:send-mood-reminder')
-			->dailyAt('20:00');*/
+
+        // Send a reminder to input data on the mood tracker
+        /*$schedule->command('home-app-api:send-mood-reminder')
+            ->dailyAt('19:00');*/
+        /*$schedule->command('home-app-api:send-mood-reminder')
+            ->dailyAt('20:00');*/
     }
 
     /**

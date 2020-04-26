@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
 use App\Models\Place;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AddPlaceIdToUsersTable extends Migration
 {
@@ -14,15 +14,15 @@ class AddPlaceIdToUsersTable extends Migration
      */
     public function up()
     {
-			Schema::table('users', function (Blueprint $t) {
-				$t->integer('place_id')
-					->unsigned()
-					->default(Place::PLACE3)
-					->after('id');
-				$t->foreign('place_id')
-					->references('id')
-					->on('places');
-			});
+        Schema::table('users', function (Blueprint $t) {
+            $t->integer('place_id')
+                    ->unsigned()
+                    ->default(Place::PLACE3)
+                    ->after('id');
+            $t->foreign('place_id')
+                    ->references('id')
+                    ->on('places');
+        });
     }
 
     /**
@@ -32,9 +32,9 @@ class AddPlaceIdToUsersTable extends Migration
      */
     public function down()
     {
-			Schema::table('users', function (Blueprint $t) {
-				$t->dropForeign('users_place_id_foreign');
-				$t->dropColumn('place_id');
-			});
+        Schema::table('users', function (Blueprint $t) {
+            $t->dropForeign('users_place_id_foreign');
+            $t->dropColumn('place_id');
+        });
     }
 }

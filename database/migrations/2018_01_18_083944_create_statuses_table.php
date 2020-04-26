@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Support\Facades\DB;
 use App\Models\Status;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class CreateStatusesTable extends Migration
 {
@@ -16,28 +16,28 @@ class CreateStatusesTable extends Migration
     public function up()
     {
         Schema::create('statuses', function (Blueprint $t) {
-						$t->increments('id');
-						$t->string('name');
-						$t->string('key');
+            $t->increments('id');
+            $t->string('name');
+            $t->string('key');
         });
 
-				DB::table('statuses')->insert([
-					[
-						'id' => Status::OK,
-						'name' => 'Ok',
-						'key' => 'ok'
-					],
-					[
-						'id' => Status::DAMAGED,
-						'name' => 'Dañado',
-						'key' => 'damaged'
-					],
-					[
-						'id' => Status::DESTROYED,
-						'name' => 'Destruído',
-						'key' => 'destroyed'
-					]
-				]);
+        DB::table('statuses')->insert([
+            [
+                'id' => Status::OK,
+                'name' => 'Ok',
+                'key' => 'ok',
+            ],
+            [
+                'id' => Status::DAMAGED,
+                'name' => 'Dañado',
+                'key' => 'damaged',
+            ],
+            [
+                'id' => Status::DESTROYED,
+                'name' => 'Destruído',
+                'key' => 'destroyed',
+            ],
+        ]);
     }
 
     /**

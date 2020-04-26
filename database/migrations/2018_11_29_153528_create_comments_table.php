@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateCommentsTable extends Migration
 {
@@ -21,9 +21,9 @@ class CreateCommentsTable extends Migration
             $table->string('commentable_type');
             $table->timestamps();
 
-						$table->foreign('user_id')
-							->references('id')
-							->on('users');
+            $table->foreign('user_id')
+                            ->references('id')
+                            ->on('users');
         });
     }
 

@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\Models\User;
 use App\Models\Expense;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ExpensePolicy
@@ -15,6 +15,7 @@ class ExpensePolicy
      *
      * @param  \App\Models\User  $user
      * @param  \App\Models\Expense  $expense
+     *
      * @return mixed
      */
     public function view(User $user, Expense $expense)
@@ -26,6 +27,7 @@ class ExpensePolicy
      * Determine whether the user can create expenses.
      *
      * @param  \App\Models\User  $user
+     *
      * @return mixed
      */
     public function create(User $user)
@@ -38,6 +40,7 @@ class ExpensePolicy
      *
      * @param  \App\Models\User  $user
      * @param  \App\Models\Expense  $expense
+     *
      * @return mixed
      */
     public function update(User $user, Expense $expense)
@@ -50,6 +53,7 @@ class ExpensePolicy
      *
      * @param  \App\Models\User  $user
      * @param  \App\Models\Expense  $expense
+     *
      * @return mixed
      */
     public function delete(User $user, Expense $expense)

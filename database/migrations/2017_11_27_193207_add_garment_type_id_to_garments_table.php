@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
 use App\Models\GarmentType;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AddGarmentTypeIdToGarmentsTable extends Migration
 {
@@ -14,15 +14,15 @@ class AddGarmentTypeIdToGarmentsTable extends Migration
      */
     public function up()
     {
-			Schema::table('garments', function (Blueprint $t) {
-				$t->integer('garment_type_id')
-					->unsigned()
-					->default(GarmentType::SHIRT)
-					->after('name');
-				$t->foreign('garment_type_id')
-					->references('id')
-					->on('garment_types');
-			});
+        Schema::table('garments', function (Blueprint $t) {
+            $t->integer('garment_type_id')
+                    ->unsigned()
+                    ->default(GarmentType::SHIRT)
+                    ->after('name');
+            $t->foreign('garment_type_id')
+                    ->references('id')
+                    ->on('garment_types');
+        });
     }
 
     /**
@@ -32,9 +32,9 @@ class AddGarmentTypeIdToGarmentsTable extends Migration
      */
     public function down()
     {
-			Schema::table('garments', function (Blueprint $t) {
-				$t->dropForeign('garments_garment_type_id_foreign');
-				$t->dropColumn('garment_type_id');
-			});
+        Schema::table('garments', function (Blueprint $t) {
+            $t->dropForeign('garments_garment_type_id_foreign');
+            $t->dropColumn('garment_type_id');
+        });
     }
 }

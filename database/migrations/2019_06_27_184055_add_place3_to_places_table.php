@@ -1,10 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\Place;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\DB;
-use App\Models\Place;
 
 class AddPlace3ToPlacesTable extends Migration
 {
@@ -15,13 +13,13 @@ class AddPlace3ToPlacesTable extends Migration
      */
     public function up()
     {
-				DB::table('places')->insert([
-					[
-						'id' => Place::PLACE3,
-						'name' => 'Place3',
-						'key' => 'place3'
-					]
-				]);
+        DB::table('places')->insert([
+            [
+                'id' => Place::PLACE3,
+                'name' => 'Place3',
+                'key' => 'place3',
+            ],
+        ]);
     }
 
     /**
@@ -31,6 +29,6 @@ class AddPlace3ToPlacesTable extends Migration
      */
     public function down()
     {
-			  DB::table('places')->where('id', Place::PLACE3)->delete();
+        DB::table('places')->where('id', Place::PLACE3)->delete();
     }
 }
