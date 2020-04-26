@@ -47,7 +47,7 @@ class SendMoodReminder extends Command
      */
     public function handle()
 	{
-		$users = [User::find($this->userId)]
+		$users = [User::find($this->userId)];
 		if (empty(json_decode($this->client->request('GET', 'moods/today')->getBody()))) {
 			foreach ($users as $user) {
 				$this->firebase->sendFirebaseNotification(
