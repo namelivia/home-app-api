@@ -11,7 +11,7 @@ class MoodsController extends Controller
     public function __construct()
     {
         $this->client = new Client(['base_uri' => $this->apiURI]);
-		$this->apiURI = config('moodtracker.url');
+        $this->apiURI = config('moodtracker.url');
     }
 
     public function index()
