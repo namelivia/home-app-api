@@ -1,3 +1,15 @@
+language: php
+
+php:
+  - 7.1
+  - 7.2
+  - 7.3
+
+sudo: false
+
+install:
+  - travis_retry composer install --no-interaction
+
 services:
     - docker
 env:
@@ -6,6 +18,7 @@ env:
 before_script:
   - docker pull "$IMAGE_NAME" || true
 script:
+  - vendor/bin/phpunit --coverage-clover clover.xml
   - docker build --pull --cache-from "$IMAGE_NAME" --tag "$IMAGE_NAME" .
 before_deploy:
   - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
@@ -17,4 +30,5 @@ deploy:
   on:
     tags: true
     branch: master
-
+after_script:
+- bash <(curl -s https://codecov.io/bash)
