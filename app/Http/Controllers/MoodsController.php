@@ -6,7 +6,6 @@ use GuzzleHttp\Client;
 
 class MoodsController extends Controller
 {
-<<<<<<< Updated upstream
     private $apiURI = config('moodtracker.url');
 
     public function __construct()
@@ -49,49 +48,4 @@ class MoodsController extends Controller
             'moods/' . $moodId
         );
     }
-=======
-
-	private $apiURI;
-	public function __construct()
-	{
-		$this->client = new Client(['base_uri' => $this->apiURI]);
-		$this->apiURI = config('moodtracker.url');
-	}
-
-	public function index()
-	{
-		return $this->client->request('GET', 'moods');
-	}
-
-	public function today()
-	{
-		return $this->client->request('GET', 'moods/today');
-	}
-
-	public function store()
-	{
-		return $this->client->request(
-			'POST',
-			'moods',
-			['json' => request()->all()]
-		);
-	}
-
-	public function update($moodId)
-	{
-		return $this->client->request(
-			'PUT',
-			'moods/' . $moodId,
-			['json' => request()->all()]
-		);
-	}
-
-	public function destroy($moodId)
-	{
-		return $this->client->request(
-			'DELETE',
-			'moods/' . $moodId
-		);
-	}
->>>>>>> Stashed changes
 }
