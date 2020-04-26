@@ -25,8 +25,8 @@ class SendMoodReminder extends Command
 
 	private $firebase;
 	private $client;
-	private $moodTrackerUrl = config('moodtracker.url');
-	private $userId = config('moodtracker.user_id');
+	private $moodTrackerUrl;
+	private $userId;
 
     /**
      * Create a new command instance.
@@ -38,6 +38,8 @@ class SendMoodReminder extends Command
 		parent::__construct();
 		$this->firebase = $firebase;
 		$this->client = new Client(['base_uri' => $this->moodTrackerUrl]);
+		$this->moodTrackerUrl = config('moodtracker.url');
+		$this->userId = config('moodtracker.user_id');
 	}
 
     /**
