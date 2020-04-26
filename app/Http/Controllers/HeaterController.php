@@ -17,7 +17,7 @@ class HeaterController extends BaseController
 	public function __construct()
 	{
 		parent::__construct();
-		$this->client = new Client(['base_uri' => config('heater.url']));
+		$this->client = new Client(['base_uri' => config('heater.url')]);
 	}
 
 	public function turnOn()

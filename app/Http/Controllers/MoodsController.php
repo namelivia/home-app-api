@@ -6,7 +6,7 @@ use GuzzleHttp\Client;
 class MoodsController extends Controller
 {
 
-	private $apiURI = config('moodtracker.url')
+	private $apiURI = config('moodtracker.url');
 	public function __construct()
 	{
 		$this->client = new Client(['base_uri' => $this->apiURI]);
