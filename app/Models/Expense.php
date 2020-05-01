@@ -18,7 +18,7 @@ class Expense extends BaseModel
     protected $fillable = [
         'name',
         'value',
-        'owner_id',
+        'user_id',
         'spending_category_id',
     ];
 
@@ -32,7 +32,7 @@ class Expense extends BaseModel
         return [
             ['ForTimeAfter',        'after'],
             ['ForTimeBefore',       'before'],
-            ['ForOwnerIds',       'owner_id'],
+            ['ForUserIds',          'user_id'],
             ['ForSpendingCategoryIds',       'spending_category_id'],
         ];
     }
@@ -65,7 +65,7 @@ class Expense extends BaseModel
         return [
             'name' => 'required',
             'value' => 'required|numeric',
-            'owner_id' => 'required|exists:owners,id',
+            'user_id' => 'required|exists:users,id',
             'spending_category_id' => 'required|exists:spending_categories,id',
         ];
     }
@@ -94,9 +94,9 @@ class Expense extends BaseModel
         return $query->where('created_at', '<=', $time);
     }
 
-    public function scopeForOwnerIds(Builder $query, array $ownerIds)
+    public function scopeForUserIds(Builder $query, array $userIds)
     {
-        return $query->whereIn('owner_id', $ownerIds);
+        return $query->whereIn('user_id', $userIds);
     }
 
     public function scopeForSpendingCategoryIds(Builder $query, array $spendingCategoryIds)
@@ -109,18 +109,18 @@ class Expense extends BaseModel
         return $this->belongsTo(SpendingCategory::class);
     }
 
-    public function owner()
+    public function user()
     {
-        return $this->belongsTo(Owner::class);
+        return $this->belongsTo(User::class);
     }
 
-    public function owner1Total()
+    public function user1Total()
     {
-        return $this->where('owner_id', Owner::OWNER1)->sum('value');
+        return $this->where('user_id', 1)->sum('value');
     }
 
-    public function owner2Total()
+    public function user2Total()
     {
-        return $this->where('owner_id', Owner::OWNER2)->sum('value');
+        return $this->where('user_id', 2)->sum('value');
     }
 }

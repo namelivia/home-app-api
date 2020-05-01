@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Expense;
-use App\Models\Owner;
+use App\Models\User;
 
 class ExpensesController extends BaseController
 {
@@ -16,13 +16,13 @@ class ExpensesController extends BaseController
 
     public function getTotals()
     {
-        $owner1Total = $this->model->owner1Total();
-        $owner2Total = $this->model->owner2Total();
+        $user1Total = $this->model->user1Total();
+        $user2Total = $this->model->user2Total();
 
         return response()->json([
-            Owner::OWNER1 => $owner1Total,
-            Owner::OWNER2 => $owner2Total,
-            'diff' => $owner1Total - $owner2Total,
+            1 => $user1Total,
+            2 => $user2Total,
+            'diff' => $user1Total - $user2Total,
         ]);
     }
 }
