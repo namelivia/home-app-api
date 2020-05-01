@@ -26,6 +26,7 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::resource('expenses', 'ExpensesController');
     Route::get('temperature/current', 'TemperatureController@getCurrent');
     Route::resource('temperature', 'TemperatureController');
+    Route::get('users', 'UsersController@index');
     Route::get('users/me', 'UsersController@currentUserInfo');
     Route::post('users/firebase', 'UsersController@updateFirebaseToken');
     Route::resource('heater', 'HeaterController');

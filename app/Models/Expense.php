@@ -116,11 +116,11 @@ class Expense extends BaseModel
 
     public function user1Total()
     {
-        return $this->where('user_id', 1)->sum('value');
+        return $this->where('user_id', 3)->sum('value');
     }
 
     public function user2Total()
     {
-        return $this->where('user_id', 2)->sum('value');
+        return $this->where('user_id', 4)->sum('value');
     }
 }
