@@ -73,6 +73,11 @@ class Garment extends BaseModel
         ];
     }
 
+    public function place()
+    {
+        return $this->belongsTo(Place::class);
+    }
+
     public function scopeForGarmentTypeIds(Builder $query, $garmentTypeIds)
     {
         $garmentTypeIds = is_array($garmentTypeIds) ? $garmentTypeIds : [$garmentTypeIds];
