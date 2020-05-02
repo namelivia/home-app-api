@@ -14,9 +14,9 @@ class AddExpenseAndUserForeginKey extends Migration
     public function up()
     {
         Schema::table('expenses', function (Blueprint $table) {
-			$table->foreign('user_id')
-				->references('id')
-				->on('users');
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users');
         });
     }
 
@@ -28,7 +28,7 @@ class AddExpenseAndUserForeginKey extends Migration
     public function down()
     {
         Schema::table('expenses', function (Blueprint $table) {
-			$table->dropForeign('expenses_user_id_foreign');
+            $table->dropForeign('expenses_user_id_foreign');
         });
     }
 }

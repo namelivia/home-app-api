@@ -42,5 +42,4 @@ class Place extends BaseModel
             'name' => 'required',
         ];
     }
-
 }

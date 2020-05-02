@@ -1,7 +1,6 @@
 <?php
 
 use App\Models\Color;
-use App\Models\Place;
 use App\Models\Status;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;

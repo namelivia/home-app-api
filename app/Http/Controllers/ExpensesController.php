@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Expense;
-use App\Models\User;
 
 class ExpensesController extends BaseController
 {

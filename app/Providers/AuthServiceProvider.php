@@ -7,15 +7,15 @@ use App\Models\Comment;
 use App\Models\Expense;
 use App\Models\Garment;
 use App\Models\Litem;
-use App\Models\SpendingCategory;
 use App\Models\Place;
+use App\Models\SpendingCategory;
 use App\Policies\CameraPolicy;
 use App\Policies\CommentPolicy;
 use App\Policies\ExpensePolicy;
 use App\Policies\GarmentPolicy;
 use App\Policies\LitemPolicy;
-use App\Policies\SpendingCategoryPolicy;
 use App\Policies\PlacePolicy;
+use App\Policies\SpendingCategoryPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Laravel\Passport\Passport;
 

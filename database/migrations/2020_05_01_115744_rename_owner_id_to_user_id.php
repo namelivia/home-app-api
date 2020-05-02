@@ -14,7 +14,7 @@ class RenameOwnerIdToUserId extends Migration
     public function up()
     {
         Schema::table('expenses', function (Blueprint $table) {
-			$table->renameColumn('owner_id', 'user_id');
+            $table->renameColumn('owner_id', 'user_id');
         });
     }
 
@@ -26,7 +26,7 @@ class RenameOwnerIdToUserId extends Migration
     public function down()
     {
         Schema::table('expenses', function (Blueprint $table) {
-			$table->renameColumn('user_id', 'owner_id');
+            $table->renameColumn('user_id', 'owner_id');
         });
     }
 }
