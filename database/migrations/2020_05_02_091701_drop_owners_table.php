@@ -2,10 +2,9 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOwnersTable extends Migration
+class DropOwnersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,6 +12,16 @@ class CreateOwnersTable extends Migration
      * @return void
      */
     public function up()
+    {
+		Schema::dropIfExists('owners');
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
     {
         Schema::create('owners', function (Blueprint $t) {
             $t->increments('id');
@@ -31,15 +40,5 @@ class CreateOwnersTable extends Migration
                 'key' => 'owner2',
             ],
         ]);
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('owners');
     }
 }

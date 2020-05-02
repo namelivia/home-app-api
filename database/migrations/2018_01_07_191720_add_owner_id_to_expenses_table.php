@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Owner;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,7 +16,7 @@ class AddOwnerIdToExpensesTable extends Migration
         Schema::table('expenses', function (Blueprint $t) {
             $t->integer('owner_id')
                     ->unsigned()
-                    ->default(Owner::OWNER1)
+                    ->default(1)
                     ->after('name');
             $t->foreign('owner_id')
                     ->references('id')
