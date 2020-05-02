@@ -52,4 +52,9 @@ class User extends BaseModel implements
             $this->attributes['password'] = $value;
         }
     }
+
+    public function permissions()
+    {
+		return $this->belongsToMany(Permission::class, 'permission_user');
+    }
 }

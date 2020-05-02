@@ -21,7 +21,7 @@ class UsersController extends BaseController
      */
     public function currentUserInfo()
     {
-        return response()->json(Auth::user());
+        return response()->json(Auth::user()->with('permissions'));
     }
 
     /**
