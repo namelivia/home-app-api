@@ -14,8 +14,8 @@ class DropOwnerForeignKey extends Migration
     public function up()
     {
         Schema::table('expenses', function (Blueprint $table) {
-			if (DB::getDriverName() !== 'sqlite') {
-				$table->dropForeign('expenses_owner_id_foreign');
+            if (DB::getDriverName() !== 'sqlite') {
+                $table->dropForeign('expenses_owner_id_foreign');
             }
         });
     }
@@ -28,9 +28,9 @@ class DropOwnerForeignKey extends Migration
     public function down()
     {
         Schema::table('expenses', function (Blueprint $table) {
-			$t->foreign('owner_id')
-				->references('id')
-				->on('owners');
+            $t->foreign('owner_id')
+                ->references('id')
+                ->on('owners');
         });
     }
 }

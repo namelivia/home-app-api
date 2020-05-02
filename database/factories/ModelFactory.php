@@ -4,9 +4,9 @@ use App\Models\Color;
 use App\Models\Garment;
 use App\Models\GarmentType;
 use App\Models\Place;
+use App\Models\SpendingCategory;
 use App\Models\Status;
 use App\Models\User;
-use App\Models\SpendingCategory;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,9 +37,9 @@ $factory->define(Garment::class, function (Faker\Generator $faker) {
         'garment_type_id' => $faker->numberBetween(GarmentType::SHIRT, GarmentType::OTHER),
         'color_id' => $faker->numberBetween(Color::WHITE, Color::BLUE),
         'status_id' => $faker->numberBetween(Status::OK, Status::TRASHED),
-		'place_id' => function () {
-			return factory(Place::class)->create()->id;
-		}
+        'place_id' => function () {
+            return factory(Place::class)->create()->id;
+        },
     ];
 });
 

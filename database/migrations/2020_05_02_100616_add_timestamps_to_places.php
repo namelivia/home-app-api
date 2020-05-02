@@ -26,7 +26,7 @@ class AddTimestampsToPlaces extends Migration
     public function down()
     {
         Schema::table('places', function (Blueprint $table) {
-			$table->dropTimestamps();
+            $table->dropTimestamps();
         });
     }
 }

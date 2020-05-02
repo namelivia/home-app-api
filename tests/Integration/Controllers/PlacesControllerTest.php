@@ -8,7 +8,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Passport\Passport;
 use Symfony\Component\HttpFoundation\Response;
 
-class PlacesCategoriesControllerTest extends TestCase
+class PlacesControllerTest extends TestCase
 {
     use RefreshDatabase;
 

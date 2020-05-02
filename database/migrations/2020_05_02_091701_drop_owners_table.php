@@ -13,7 +13,7 @@ class DropOwnersTable extends Migration
      */
     public function up()
     {
-		Schema::dropIfExists('owners');
+        Schema::dropIfExists('owners');
     }
 
     /**
