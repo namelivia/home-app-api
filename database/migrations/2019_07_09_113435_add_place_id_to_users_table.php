@@ -17,7 +17,7 @@ class AddPlaceIdToUsersTable extends Migration
         Schema::table('users', function (Blueprint $t) {
             $t->integer('place_id')
                     ->unsigned()
-                    ->default(Place::PLACE3)
+                    ->default(3)
                     ->after('id');
             $t->foreign('place_id')
                     ->references('id')

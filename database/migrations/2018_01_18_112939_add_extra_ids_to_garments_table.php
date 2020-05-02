@@ -29,7 +29,7 @@ class AddExtraIdsToGarmentsTable extends Migration
         Schema::table('garments', function (Blueprint $t) {
             $t->integer('place_id')
                     ->unsigned()
-                    ->default(Place::PLACE1)
+                    ->default(1)
                     ->after('name');
             $t->foreign('place_id')
                     ->references('id')

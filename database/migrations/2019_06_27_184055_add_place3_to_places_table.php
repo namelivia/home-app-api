@@ -15,7 +15,7 @@ class AddPlace3ToPlacesTable extends Migration
     {
         DB::table('places')->insert([
             [
-                'id' => Place::PLACE3,
+                'id' => 3,
                 'name' => 'Place3',
                 'key' => 'place3',
             ],
@@ -29,6 +29,6 @@ class AddPlace3ToPlacesTable extends Migration
      */
     public function down()
     {
-        DB::table('places')->where('id', Place::PLACE3)->delete();
+        DB::table('places')->where('id', 3)->delete();
     }
 }

@@ -22,12 +22,12 @@ class CreatePlacesTable extends Migration
         });
         DB::table('places')->insert([
             [
-                'id' => Place::PLACE1,
+                'id' => 1,
                 'name' => 'Place1',
                 'key' => 'place1',
             ],
             [
-                'id' => Place::PLACE2,
+                'id' => 2,
                 'name' => 'Place2',
                 'key' => 'place2',
             ],

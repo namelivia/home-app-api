@@ -36,6 +36,14 @@ $factory->define(Garment::class, function (Faker\Generator $faker) {
         'garment_type_id' => $faker->numberBetween(GarmentType::SHIRT, GarmentType::OTHER),
         'color_id' => $faker->numberBetween(Color::WHITE, Color::BLUE),
         'status_id' => $faker->numberBetween(Status::OK, Status::TRASHED),
-        'place_id' => $faker->numberBetween(Place::PLACE1, Place::PLACE3),
+		'place_id' => function () {
+			return factory(Place::class)->create()->id;
+		}
+    ];
+});
+
+$factory->define(Place::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
     ];
 });
