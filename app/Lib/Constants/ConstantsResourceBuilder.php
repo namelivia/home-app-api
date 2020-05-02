@@ -17,7 +17,6 @@ class ConstantsResourceBuilder
      */
     protected $models = [
         \App\Models\GarmentType::class,
-        \App\Models\Place::class,
         \App\Models\Status::class,
         \App\Models\Color::class,
     ];

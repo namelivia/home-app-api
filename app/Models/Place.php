@@ -4,15 +4,43 @@ namespace App\Models;
 
 class Place extends BaseModel
 {
-    const PLACE1 = 1;
-    const PLACE2 = 2;
-    const PLACE3 = 3;
+    /**
+     * Attributes that can be written by an API call.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name',
+    ];
 
     /**
-     * Whether or not this model is
-     * read-only or can be modified.
+     * List of common error codes for the model.
      *
-     * @var bool
+     * @return array
      */
-    public static $readOnly = true;
+    public function getErrorCodes()
+    {
+        return [
+            'notFound' => ErrorCodes::PLACE_NOT_FOUND,
+            'invalidData' => ErrorCodes::INVALID_PLACE,
+            'failedToCreate' => ErrorCodes::FAILED_TO_CREATE_PLACE,
+            'failedToUpdate' => ErrorCodes::FAILED_TO_UPDATE_PLACE,
+            'failedToDelete' => ErrorCodes::FAILED_TO_DELETE_PLACE,
+        ];
+    }
+
+    /**
+     * List of valuation rules for the model.
+     *
+     * @param int|null $entityId
+     *
+     * @return array
+     */
+    public function getValidationRules($entityId = null)
+    {
+        return [
+            'name' => 'required',
+        ];
+    }
+
 }

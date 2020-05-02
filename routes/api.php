@@ -30,6 +30,7 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::get('users/me', 'UsersController@currentUserInfo');
     Route::post('users/firebase', 'UsersController@updateFirebaseToken');
     Route::resource('heater', 'HeaterController');
+    Route::resource('places_', 'PlacesController');
     Route::get('heater/turn_on', 'HeaterController@turnOn');
     Route::get('heater/turn_off', 'HeaterController@turnOff');
     Route::get('heater/get_logs', 'HeaterController@viewLogs');
