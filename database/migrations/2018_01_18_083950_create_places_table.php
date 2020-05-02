@@ -20,18 +20,6 @@ class CreatePlacesTable extends Migration
             $t->string('name');
             $t->string('key');
         });
-        DB::table('places')->insert([
-            [
-                'id' => 1,
-                'name' => 'Place1',
-                'key' => 'place1',
-            ],
-            [
-                'id' => 2,
-                'name' => 'Place2',
-                'key' => 'place2',
-            ],
-        ]);
     }
 
     /**

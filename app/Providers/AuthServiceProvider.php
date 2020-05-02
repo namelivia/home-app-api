@@ -7,11 +7,15 @@ use App\Models\Comment;
 use App\Models\Expense;
 use App\Models\Garment;
 use App\Models\Litem;
+use App\Models\SpendingCategory;
+use App\Models\Place;
 use App\Policies\CameraPolicy;
 use App\Policies\CommentPolicy;
 use App\Policies\ExpensePolicy;
 use App\Policies\GarmentPolicy;
 use App\Policies\LitemPolicy;
+use App\Policies\SpendingCategoryPolicy;
+use App\Policies\PlacePolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Laravel\Passport\Passport;
 
@@ -28,6 +32,8 @@ class AuthServiceProvider extends ServiceProvider
         Expense::class => ExpensePolicy::class,
         Camera::class => CameraPolicy::class,
         Comment::class => CommentPolicy::class,
+        SpendingCategory::class => SpendingCategoryPolicy::class,
+        Place::class => PlacePolicy::class,
     ];
 
     /**

@@ -6,6 +6,7 @@ use App\Models\GarmentType;
 use App\Models\Place;
 use App\Models\Status;
 use App\Models\User;
+use App\Models\SpendingCategory;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,12 @@ $factory->define(Garment::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(Place::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+    ];
+});
+
+$factory->define(SpendingCategory::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
     ];
