@@ -60,4 +60,11 @@ class ErrorCodes
     const FAILED_TO_CREATE_COMMENT = 82;
     const FAILED_TO_UPDATE_COMMENT = 83;
     const FAILED_TO_DELETE_COMMENT = 84;
+
+    // PLACES
+    const PLACE_NOT_FOUND = 90;
+    const INVALID_PLACE = 91;
+    const FAILED_TO_CREATE_PLACE = 92;
+    const FAILED_TO_UPDATE_PLACE = 93;
+    const FAILED_TO_DELETE_PLACE = 94;
 }
