@@ -42,5 +42,4 @@ class Permission extends BaseModel
             'key' => 'required',
         ];
     }
-
 }

@@ -55,6 +55,6 @@ class User extends BaseModel implements
 
     public function permissions()
     {
-		return $this->belongsToMany(Permission::class, 'permission_user');
+        return $this->belongsToMany(Permission::class, 'permission_user');
     }
 }
