@@ -8,8 +8,8 @@ class AboutController extends Controller
 {
     public function about()
     {
-		return response()->json([
-			'version' => config('app.version')
-		]);
+        return response()->json([
+            'version' => config('app.version'),
+        ]);
     }
 }
