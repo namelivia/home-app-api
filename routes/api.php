@@ -36,3 +36,4 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::get('heater/get_logs', 'HeaterController@viewLogs');
     Route::get('check_air', 'HeaterController@checkAir');
 });
+Route::get('', 'AboutController@about');
