@@ -20,8 +20,6 @@ RUN apt-get update && apt-get install -y \
     jpegoptim optipng pngquant gifsicle \
     vim \
     unzip \
-    nodejs \
-    npm \
     git \
     curl
 
@@ -30,6 +28,11 @@ RUN rm /etc/nginx/sites-enabled/default
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Adding imagemagick
+ADD https://raw.githubusercontent.com/mlocati/docker-php-extension-installer/master/install-php-extensions /usr/local/bin/
+RUN chmod uga+x /usr/local/bin/install-php-extensions && sync && \
+    install-php-extensions imagick
 
 # Install extensions
 RUN docker-php-ext-install pdo_mysql zip exif pcntl
