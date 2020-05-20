@@ -25,7 +25,7 @@ class UsersController extends BaseController
 
         return response()->json([
             'user' => $currentUser,
-            'permissions' => $currentUser->permissions->all(),
+            'permissions' => $currentUser->permissions->pluck('key')->all(),
         ]);
     }
 
