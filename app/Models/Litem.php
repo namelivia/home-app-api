@@ -19,6 +19,7 @@ class Litem extends BaseModel
         'name',
         'description',
         'parent_id',
+        'destination_id',
     ];
 
     protected $appends = [
@@ -35,10 +36,11 @@ class Litem extends BaseModel
     public function getFilters()
     {
         return [
-            //:scope							:params
-            ['ForParentIds',					 'parent_id'],
-            ['RootLitems',					 	 'root'],
-            ['ForSearchTerm',					 'search'],
+            //:scope                            :params
+            ['ForParentIds',                     'parent_id'],
+            ['ForDestinationIds',                 'destination_id'],
+            ['RootLitems',                          'root'],
+            ['ForSearchTerm',                     'search'],
         ];
     }
 
@@ -70,6 +72,7 @@ class Litem extends BaseModel
         return [
             'name' => 'required',
             'parent_id' => 'nullable|exists:litems,id',
+            'destination_id' => 'nullable|exists:destinations,id',
         ];
     }
 
@@ -77,7 +80,7 @@ class Litem extends BaseModel
      * Returns all items with the given parent ids.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param  int|array $claimIds
+     * @param  int|array $parentIds
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
@@ -86,6 +89,21 @@ class Litem extends BaseModel
         $parentIds = is_array($parentIds) ? $parentIds : [$parentIds];
 
         return $query->whereIn('parent_id', $parentIds);
+    }
+
+    /**
+     * Returns all items with the given destination ids.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param  int|array $destinationIds
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeForDestinationIds(Builder $query, $destinationIds)
+    {
+        $destinationIds = is_array($destinationIds) ? $destinationIds : [$destinationIds];
+
+        return $query->whereIn('destination_id', $destinationIds);
     }
 
     public function scopeForSearchTerm(Builder $query, array $searchTerm)
@@ -118,6 +136,11 @@ class Litem extends BaseModel
     public function parent()
     {
         return $this->belongsTo(self::class, 'parent_id');
+    }
+
+    public function destination()
+    {
+        return $this->belongsTo(Destination::class, 'destination_id');
     }
 
     public function children()

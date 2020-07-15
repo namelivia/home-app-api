@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Color;
+use App\Models\Destination;
 use App\Models\Garment;
 use App\Models\GarmentType;
 use App\Models\Place;
@@ -50,6 +51,12 @@ $factory->define(Place::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(SpendingCategory::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+    ];
+});
+
+$factory->define(Destination::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
     ];
