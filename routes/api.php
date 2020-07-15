@@ -19,6 +19,7 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::get('garments/wear', 'GarmentsController@wear');
     Route::resource('garments', 'GarmentsController');
     Route::resource('spending_categories', 'SpendingCategoriesController');
+    Route::resource('destinations', 'DestinationsController');
     Route::resource('litems', 'LitemsController');
     Route::resource('comments', 'CommentsController');
     Route::resource('camera', 'CamerasController');
