@@ -1,11 +1,11 @@
 <?php
 
 use App\Models\Color;
+use App\Models\Destination;
 use App\Models\Garment;
 use App\Models\GarmentType;
 use App\Models\Place;
 use App\Models\SpendingCategory;
-use App\Models\Destination;
 use App\Models\Status;
 use App\Models\User;
 
