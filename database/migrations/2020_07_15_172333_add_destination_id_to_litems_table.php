@@ -14,7 +14,7 @@ class AddDestinationIdToLitemsTable extends Migration
     public function up()
     {
         Schema::table('litems', function (Blueprint $table) {
-            $table->integer('destination_id')
+            $table->bigInteger('destination_id')
                     ->unsigned()
                     ->nullable()
                     ->after('name');
