@@ -20,6 +20,7 @@ class Litem extends BaseModel
         'description',
         'parent_id',
         'destination_id',
+        'is_container',
     ];
 
     protected $appends = [
@@ -71,6 +72,7 @@ class Litem extends BaseModel
     {
         return [
             'name' => 'required',
+            'is_container' => 'required|boolean',
             'parent_id' => 'nullable|exists:litems,id',
             'destination_id' => 'nullable|exists:destinations,id',
         ];
