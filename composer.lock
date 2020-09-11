@@ -8,23 +8,26 @@
     "packages": [
         {
             "name": "apility/laravel-fcm",
-            "version": "v1.4.1",
+            "version": "v1.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/apility/Laravel-FCM.git",
-                "reference": "66d414220065bd47ca20e518f32ab0a96d58d54d"
+                "reference": "00b2328c1e8002e487728f8ccd2bd475263c8f48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/apility/Laravel-FCM/zipball/66d414220065bd47ca20e518f32ab0a96d58d54d",
-                "reference": "66d414220065bd47ca20e518f32ab0a96d58d54d",
+                "url": "https://api.github.com/repos/apility/Laravel-FCM/zipball/00b2328c1e8002e487728f8ccd2bd475263c8f48",
+                "reference": "00b2328c1e8002e487728f8ccd2bd475263c8f48",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/guzzle": "~6.0",
-                "illuminate/support": "5.*|^6|^7",
+                "guzzlehttp/guzzle": "~6.0|~7.0",
+                "illuminate/support": "5.*|^6|^7|^8",
                 "monolog/monolog": "^1.12|^2.0",
                 "php": ">=5.5.9"
+            },
+            "replace": {
+                "brozot/laravel-fcm": "*"
             },
             "require-dev": {
                 "laravel/laravel": "5.2.*",
@@ -70,7 +73,7 @@
                 "notification",
                 "push"
             ],
-            "time": "2020-09-02T13:18:49+00:00"
+            "time": "2020-09-10T14:36:50+00:00"
         },
         {
             "name": "asm89/stack-cors",
