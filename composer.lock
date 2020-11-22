@@ -8,22 +8,22 @@
     "packages": [
         {
             "name": "apility/laravel-fcm",
-            "version": "v1.4.3",
+            "version": "v1.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/apility/Laravel-FCM.git",
-                "reference": "00b2328c1e8002e487728f8ccd2bd475263c8f48"
+                "reference": "e1484d3831f346d5dc03d64c742e53b6f500f33c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/apility/Laravel-FCM/zipball/00b2328c1e8002e487728f8ccd2bd475263c8f48",
-                "reference": "00b2328c1e8002e487728f8ccd2bd475263c8f48",
+                "url": "https://api.github.com/repos/apility/Laravel-FCM/zipball/e1484d3831f346d5dc03d64c742e53b6f500f33c",
+                "reference": "e1484d3831f346d5dc03d64c742e53b6f500f33c",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/guzzle": "~6.0|~7.0",
-                "illuminate/support": "5.*|^6|^7|^8",
-                "monolog/monolog": "^1.12|^2.0",
+                "guzzlehttp/guzzle": "^6.0|^7.0",
+                "illuminate/support": "^5.0|^6.0|^7.0|^8.0",
+                "monolog/monolog": "^1.0|^2.0",
                 "php": ">=5.5.9"
             },
             "replace": {
@@ -61,6 +61,10 @@
                 {
                     "name": "Nicolas Brosy",
                     "email": "nicolas.brosy@gmail.com"
+                },
+                {
+                    "name": "Thomas Alrek",
+                    "email": "thomas@apility.no"
                 }
             ],
             "description": "Laravel / Lumen package for Firebase Cloud Messaging ",
@@ -73,7 +77,7 @@
                 "notification",
                 "push"
             ],
-            "time": "2020-09-10T14:36:50+00:00"
+            "time": "2020-11-19T06:05:53+00:00"
         },
         {
             "name": "asm89/stack-cors",
