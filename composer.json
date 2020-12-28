@@ -7,7 +7,7 @@
     "require": {
         "php": "^7.2.5",
         "apility/laravel-fcm": "^1.4",
-        "doctrine/dbal": "^2.10",
+        "doctrine/dbal": "^3.0",
         "fideloper/proxy": "^4.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0",
